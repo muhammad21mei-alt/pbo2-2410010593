@@ -1,0 +1,7 @@
+1. Karna B002 sudah DIPINJAM oleh Siti, sehingga tidak dapat dipinjam lagi oleh Budi
+
+2. Karna Buku dan Majalah punya aturan denda yang berbeda. Perhitungan denda mengikuti implementasi hitungDenda() masing-masing class
+
+3. Karna setelah Siti berhasil meminjam B002, data peminjam disimpan menggunakan kode koleksi B002.
+
+4. Karena status koleksi berubah antara TERSEDIA dan DIPINJAM. Method jumlahTersedia() menghitung koleksi yang statusnya TERSEDIA
