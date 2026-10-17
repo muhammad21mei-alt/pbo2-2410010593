@@ -1,0 +1,23 @@
+PRAKTIKUM 2
+
+Eksperimen 1: Tombol-tombol menjadi rata tengah di dalam panel.
+Jika jendela diperkecil, posisi tombol tetap mengikuti pengaturan alignment tersebut
+
+Eksperimen 2: Baris yang terbentuk menyesuaikan jumlah komponen.
+Dengan Rows = 0 dan Columns = 2, GridLayout menentukan jumlah baris secara otomatis berdasarkan jumlah komponen
+
+Eksperimen 3: Lebar maksimum tombol menjadi sangat besar sehingga tombol dapat melebar mengikuti ruang yang tersedia.
+Vertical Strut digunakan untuk memberikan jarak vertikal di antara tombol
+
+
+
+PRAKTIKUM 4
+
+Eksperimen 1: Isian tidak lagi mendapatkan tambahan ruang horizontal dari Weight X.
+Akibatnya, lebar isian tidak bertambah secara optimal ketika jendela dilebarkan
+
+Eksperimen 2: Dengan Direction North, form berada di bagian atas panel.
+Setelah diubah menjadi Center, form berada di bagian tengah panel
+
+Eksperimen 3: Bagian form dapat menjadi terlalu sempit sehingga label dan isian saling berdekatan atau sulit dibaca.
+Hal ini terjadi karena ukuran minimum jendela tidak lagi dibatasi berdasarkan ukuran awal
