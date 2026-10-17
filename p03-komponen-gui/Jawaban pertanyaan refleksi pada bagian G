@@ -1,0 +1,14 @@
+1. Top level container itu interface/bingkai yang memiliki judul. Contohnya JFrame
+   Intermediate container adalah wadah yang digunakan untuk mengelompokkan komponen GUI. Contohnya JPanel
+   Atomic component adalah komponen yang berinteraksi langsung dengan pengguna. Contohnya JButton
+
+2. Karena Kedua JRadioButton perlu diberi properti buttonGroup yang sama agar pengguna hanya dapat memilih satu pilihan dari kedua tombol tersebut
+
+3. ComboBox digunakan untuk memilih banyak pilihan dan hanya memilih 1, Sedangkan RadioButton digunakan jika pilihannya hanya 1
+
+4. Kode di dalam initComponents() tidak boleh diedit langsung karena kode tersebut dibuat dan dikelola secara otomatis oleh GUI Builder NetBeans,
+   sehingga perubahan dapat tertimpa. Kode tambahan seharusnya ditulis di luar initComponents(),
+   misalnya di konstruktor setelah pemanggilan initComponents() atau pada method tersendiri
+
+5. FlatLightLaf.setup() harus dipanggil sebelum form dibuat agar tampilan FlatLaf diterapkan pada komponen GUI sejak awal,
+   sehingga form menggunakan tema terang yang konsisten saat ditampilkan
