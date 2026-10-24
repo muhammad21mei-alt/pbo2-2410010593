@@ -4,6 +4,8 @@
  */
 package id.ac.uniska.pbo2.p04;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -31,6 +33,51 @@ setMinimumSize(getSize()); // jendela tidak dapat dikecilkan melebihi ukuran awa
 setLocationRelativeTo(null);
 }
 
+private void kosongkanForm() {
+    npmField.setText("");
+    namaField.setText("");
+    emailField.setText("");
+    hpField.setText("");
+    alamatField.setText("");
+
+    prodiComboBox.setSelectedIndex(0);
+
+    mahasiswaRadio.setSelected(true);
+    setujuCheck.setSelected(false);
+
+    npmLabel.setText("0 dari 10 digit");
+
+    daftarButton.setEnabled(false);
+    npmField.requestFocusInWindow();
+}
+
+private void tampilkanRingkasan() {
+    String jenisAnggota;
+
+    if (mahasiswaRadio.isSelected()) {
+        jenisAnggota = "Mahasiswa";
+    } else if (dosenRadio.isSelected()) {
+        jenisAnggota = "Dosen";
+    } else {
+        jenisAnggota = "Umum";
+    }
+
+    String pesan = "NPM: " + npmField.getText()
+            + "\nNama Lengkap: " + namaField.getText()
+            + "\nProgram Studi: "
+            + prodiComboBox.getSelectedItem()
+            + "\nJenis Anggota: " + jenisAnggota
+            + "\nEmail: " + emailField.getText()
+            + "\nNomor HP: " + hpField.getText()
+            + "\nAlamat: " + alamatField.getText();
+
+    javax.swing.JOptionPane.showMessageDialog(
+            this,
+            pesan,
+            "Ringkasan Data Anggota",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE
+    );
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,11 +115,16 @@ setLocationRelativeTo(null);
         emailField = new javax.swing.JTextField();
         hpField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        alamatField = new javax.swing.JTextArea();
+        setujuCheck = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         headerPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(16, 16, 8, 16));
         headerPanel.setLayout(new javax.swing.BoxLayout(headerPanel, javax.swing.BoxLayout.Y_AXIS));
@@ -94,6 +146,7 @@ setLocationRelativeTo(null);
         tombolPanel.add(batalButton);
 
         daftarButton.setText("Daftar");
+        daftarButton.setEnabled(false);
         daftarButton.addActionListener(this::daftarButtonActionPerformed);
         tombolPanel.add(daftarButton);
 
@@ -150,6 +203,11 @@ setLocationRelativeTo(null);
         formPanel.add(dataDiriLabel, gridBagConstraints);
 
         npmField.addActionListener(this::npmFieldActionPerformed);
+        npmField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                npmFieldKeyReleased(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -165,7 +223,7 @@ setLocationRelativeTo(null);
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         formPanel.add(namaField, gridBagConstraints);
 
-        prodiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Program Studi" }));
+        prodiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Program Studi", "Sistem informasi", "Teknik Informatika" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -253,9 +311,9 @@ setLocationRelativeTo(null);
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         formPanel.add(hpField, gridBagConstraints);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        alamatField.setColumns(20);
+        alamatField.setRows(5);
+        jScrollPane1.setViewportView(alamatField);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -264,13 +322,14 @@ setLocationRelativeTo(null);
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
         formPanel.add(jScrollPane1, gridBagConstraints);
 
-        jCheckBox1.setText("Setuju dengan  tata tertib perpustakaan");
-        jCheckBox1.addActionListener(this::jCheckBox1ActionPerformed);
+        setujuCheck.setText("Setuju dengan  tata tertib perpustakaan");
+        setujuCheck.addItemListener(this::setujuCheckItemStateChanged);
+        setujuCheck.addActionListener(this::setujuCheckActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        formPanel.add(jCheckBox1, gridBagConstraints);
+        formPanel.add(setujuCheck, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Persetujuan");
@@ -301,17 +360,51 @@ setLocationRelativeTo(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void setujuCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setujuCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_setujuCheckActionPerformed
 
     private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
         // TODO add your handling code here:
+        kosongkanForm();
     }//GEN-LAST:event_batalButtonActionPerformed
 
     private void daftarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarButtonActionPerformed
         // TODO add your handling code here:
+        tampilkanRingkasan();
     }//GEN-LAST:event_daftarButtonActionPerformed
+
+    private void setujuCheckItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_setujuCheckItemStateChanged
+        // TODO add your handling code here:
+        daftarButton.setEnabled(setujuCheck.isSelected());
+    }//GEN-LAST:event_setujuCheckItemStateChanged
+
+    private void npmFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_npmFieldKeyReleased
+        // TODO add your handling code here:
+        int jumlahDigit = 0;
+
+    for (char karakter : npmField.getText().toCharArray()) {
+        if (Character.isDigit(karakter)) {
+            jumlahDigit++;
+        }
+    }
+
+    npmLabel.setText(jumlahDigit + " dari 10 digit");
+    }//GEN-LAST:event_npmFieldKeyReleased
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        int jawab = javax.swing.JOptionPane.showConfirmDialog(
+            this,
+            "Keluar dari aplikasi?",
+            "Konfirmasi",
+            javax.swing.JOptionPane.YES_NO_OPTION
+    );
+
+    if (jawab == javax.swing.JOptionPane.YES_OPTION) {
+        dispose();
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -339,6 +432,7 @@ setLocationRelativeTo(null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea alamatField;
     private javax.swing.JLabel alamatLabel;
     private javax.swing.JButton batalButton;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -352,10 +446,8 @@ setLocationRelativeTo(null);
     private javax.swing.JTextField hpField;
     private javax.swing.JLabel hpLabel;
     private javax.swing.JPanel isiForm;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jenisLabel;
     private javax.swing.JLabel judulLabel;
     private javax.swing.JLabel keteranganLabel;
@@ -367,6 +459,7 @@ setLocationRelativeTo(null);
     private javax.swing.JLabel npmLabel;
     private javax.swing.JComboBox<String> prodiComboBox;
     private javax.swing.JLabel prodiLabel;
+    private javax.swing.JCheckBox setujuCheck;
     private javax.swing.JPanel tombolPanel;
     private javax.swing.JRadioButton umumRadio;
     // End of variables declaration//GEN-END:variables
