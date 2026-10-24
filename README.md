@@ -17,3 +17,10 @@ EKSPERIMEN P4
 
 <img width="617" height="362" alt="image" src="https://github.com/user-attachments/assets/2c24ae7a-4c8b-45de-bc70-3c74a9158c19" />
 
+
+
+BAGIAN BUTTON DAFTAR PROPERTIES DAN EVENT
+<img width="430" height="578" alt="image" src="https://github.com/user-attachments/assets/f8d9a6b2-53d4-4d2d-b0d4-3bcfd9abbc72" /> <img width="439" height="601" alt="image" src="https://github.com/user-attachments/assets/7ee456b8-9209-4b21-8a3d-def9ab7f8c0d" />
+
+
+
