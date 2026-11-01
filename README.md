@@ -1,4 +1,4 @@
-PERTEMUAN 5
+<h1 style="font-size: 50px;">PERTEMUAN 5</h1>
 
 EKSPERIMEN PRAKTIKUM 3
 1. Pesan "item berubah" akan tercetak 2 kali setiap pilihan diganti, karena itemStateChanged dipanggil dua kali, yaitu ketika pilihan lama mengalami DESELECTED dan pilihan baru mengalami SELECTED
@@ -46,3 +46,43 @@ TANGKAPAN LAYAR DIALOG KONFIRMASI KELUAR
 
 
 Penggunaan AI menggunakan ChatGPT. AI digunakan untuk mencari tau code perhitungan modulus dan mencari tau permasalahan error yang terjadi
+
+
+
+
+
+<h1 style="font-size: 50px;">PERTEMUAN 6</h1>
+
+<h4 style="font-size: 50px;">A. Foto atau pindaian dari Teman</h4>
+
+
+<img width="600" height="500" alt="Screenshot 2026-10-31 155210" src="https://github.com/user-attachments/assets/1a3152b5-656e-4a23-a692-526d50e1c82b" />
+
+
+
+
+<h4 style="font-size: 50px;">B. Tabel singkat berisi temuan dari teman, perbaikan yang Anda lakukan, dan commit yang memuat perbaikan
+tersebut</h4>
+
+
+<img width="507" height="494" alt="Screenshot 2026-10-31 160839" src="https://github.com/user-attachments/assets/fbe9e12d-fd0c-456b-b080-46ae6928f209" />
+
+
+<h4 style="font-size: 50px;">C. Tangkapan layar form dengan pesan kesalahan, tangkapan layar jendela Navigator yang memperlihatkan
+label pesan, dan jawaban eksperimen Praktikum 4.</h4>
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/fcc0f602-86f3-4689-85fa-2bee35588c36" />
+<img width="1153" height="1261" alt="image" src="https://github.com/user-attachments/assets/e9ff3123-c749-4e35-a0e5-fbab1bc334be" />
+
+1. Ketika mengetik huruf pada isian NPM, karakter tersebut tidak akan masuk ke dalam kolom. Hal ini terjadi karena terdapat pemeriksaan !Character.isDigit(evt.getKeyChar()). Jika karakter yang dimasukkan bukan angka, maka perintah evt.consume() akan membatalkan input tersebut. Selain itu, NPM juga dibatasi maksimal 10 digit melalui variabel penuh.
+2. Pesan kesalahan muncul ketika fokus berpindah dari isian email ke komponen berikutnya setelah tombol Tab ditekan. Hal ini terjadi karena event focusLost memanggil method periksaEmail() ketika isian email tidak kosong. Karena format siti@ belum valid, pesan kesalahan akan ditampilkan di bawah isian email.		
+3.	Tidak ada pesan kesalahan karena event focusLost pada nama memiliki pemeriksaan !namaField.getText().isBlank(). Artinya, validasi hanya dilakukan apabila isian Nama sudah berisi teks. Isian kosong baru diperiksa ketika tombol Daftar diklik.
+4.	Isian NPM akan mendapatkan fokus terlebih dahulu. Hal ini karena method daftar() memeriksa seluruh isian secara berurutan, dimulai dari NPM. Ketika ditemukan kesalahan, komponen pertama dalam daftar kesalahan akan menerima fokus melalui perintah salah.get(0).requestFocusInWindow().
+5.	Isian Nama akan mendapatkan fokus karena label Nama menggunakan mnemonic huruf N dan terhubung dengan komponen namaField melalui properti labelFor. Properti displayedMnemonic pada label digunakan untuk menentukan huruf pintasan tersebut.
+6.	Ya, data yang sudah dimasukkan tetap ada. Hal ini karena ketika pengguna memilih No pada dialog konfirmasi, program menjalankan perintah return sehingga proses pengosongan data dibatalkan. Data hanya akan dihapus apabila pengguna memilih Yes.	
+
+
+<h4 style="font-size: 50px;">D. Deklarasi penggunaan AI: alat yang dipakai dan untuk keperluan apa, atau pernyataan tidak memakai AI</h4>
+
+AI Yang digunakan adalah ChatGPT, keperluannya mencari tau apa itu mneomonic, Mencari tau kode Aturan baru tidak memperbolehkan Nomor digit digunakan pada Field nama, dan terakhir mencari tau maksud dari B. Tabel singkat berisi temuan dari teman, perbaikan yang Anda lakukan, dan commit yang memuat perbaikan
+tersebut
