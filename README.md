@@ -86,3 +86,30 @@ label pesan, dan jawaban eksperimen Praktikum 4.</h4>
 
 AI Yang digunakan adalah ChatGPT, keperluannya mencari tau apa itu mneomonic, Mencari tau kode Aturan baru tidak memperbolehkan Nomor digit digunakan pada Field nama, dan terakhir mencari tau maksud dari B. Tabel singkat berisi temuan dari teman, perbaikan yang Anda lakukan, dan commit yang memuat perbaikan
 tersebut
+
+
+<h1 style="font-size: 50px;">PERTEMUAN 7</h1>
+
+<h4 style="font-size: 50px;">A. Jawaban Experimen</h4>
+1. Tabel tidak langsung menampilkan kontak baru karena fireTableRowsInserted() berfungsi memberi tahu JTable bahwa ada baris baru. Tanpa pemberitahuan tersebut, tabel tidak otomatis diperbarui	
+
+2. Budi Santoso	
+
+3. Kontak yang ditambahkan tetap dapat disimpan dan ditampilkan pada tabel meskipun dialog masih terbuka	
+
+4. Ctrl+E dan Ctrl+D tidak berfungsi karena fitur Ubah dan Hapus hanya dapat digunakan ketika terdapat baris kontak yang dipilih	
+
+5. baris hapusItem.setAccelerator yang berubah menjadi Delete yang awalnya adalah Ctrl + D	
+
+6. Terjadi error karena variabel model belum diinisialisasi saat initComponents() dijalankan. Akibatnya, tabel menerima nilai null sebagai model	
+
+
+<h4 style="font-size: 50px;">B. Tautan link video demo mini proyek</h4>
+
+Maaf pa ukuran Videonya 28mb sedangkan maksimal uploud disini 10mb, kalau saya compress takudnya buram dan tidak jelas nanti gambarnya, jadi saya masukkan google drive saja dan taruh linknya disini
+https://drive.google.com/file/d/1hS58lQ_bPkZyvj1BqOnZIwQBoP8fh8yU/view?usp=sharing
+
+
+<h4 style="font-size: 50px;">C. Deklarasi penggunaan AI: alat yang dipakai dan untuk keperluan apa, atau pernyataan tidak memakai AI</h4>
+
+Saya menggunakan Chat GPT, Ai digunakan sebagai alat pencari error dan langkah-langkah yang sekiranya tidak dimengerti pada modul serta membantu dalam mengoding pada bagian Mini Proyek.
