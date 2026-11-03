@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="id.ac.uniska.pbo2.uts.DaftarBelanja">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="id.ac.uniska.pbo2.uts.RekapNilaiForm">
   <grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
@@ -8,7 +8,8 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="formPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <!-- Panel Form Kiri -->
+      <grid id="formPanel" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -16,73 +17,87 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="lblNama" class="javax.swing.JLabel">
+          <component id="lblNpm" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Nama Barang"/>
+              <text value="NPM"/>
             </properties>
           </component>
-          <component id="txtNama" class="javax.swing.JTextField" binding="txtNama">
+          <component id="txtNpm" class="javax.swing.JTextField" binding="txtNpm">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="lblKategori" class="javax.swing.JLabel">
+          <component id="lblNama" class="javax.swing.JLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Kategori"/>
+              <text value="Nama"/>
             </properties>
           </component>
-          <component id="cmbKategori" class="javax.swing.JComboBox" binding="cmbKategori">
+          <component id="txtNama" class="javax.swing.JTextField" binding="txtNama">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="lblHarga" class="javax.swing.JLabel">
+          <component id="lblTugas" class="javax.swing.JLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Harga (Rp)"/>
+              <text value="Nilai Tugas"/>
             </properties>
           </component>
-          <component id="txtHarga" class="javax.swing.JTextField" binding="txtHarga">
+          <component id="txtTugas" class="javax.swing.JTextField" binding="txtTugas">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="lblJumlah" class="javax.swing.JLabel">
+          <component id="lblUts" class="javax.swing.JLabel">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Jumlah"/>
+              <text value="Nilai UTS"/>
             </properties>
           </component>
-          <component id="spnJumlah" class="javax.swing.JSpinner" binding="spnJumlah">
+          <component id="txtUts" class="javax.swing.JTextField" binding="txtUts">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="btnTambah" class="javax.swing.JButton" binding="btnTambah">
+          <component id="lblUas" class="javax.swing.JLabel">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Tambah"/>
+              <text value="Nilai UAS"/>
+            </properties>
+          </component>
+          <component id="txtUas" class="javax.swing.JTextField" binding="txtUas">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="btnSimpan" class="javax.swing.JButton" binding="btnSimpan">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Simpan"/>
             </properties>
           </component>
           <component id="btnBersihkan" class="javax.swing.JButton" binding="btnBersihkan">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Bersihkan"/>
@@ -90,7 +105,7 @@
           </component>
           <component id="lblError" class="javax.swing.JLabel" binding="lblError">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value=""/>
@@ -98,6 +113,8 @@
           </component>
         </children>
       </grid>
+      
+      <!-- Tabel Kanan -->
       <scrollpane id="scrollPane" binding="scrollPane">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -105,18 +122,20 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="tblBelanja" class="javax.swing.JTable" binding="tblBelanja">
+          <component id="tblNilai" class="javax.swing.JTable" binding="tblNilai">
             <constraints/>
             <properties/>
           </component>
         </children>
       </scrollpane>
+      
+      <!-- Ringkasan Bawah -->
       <component id="lblRingkasan" class="javax.swing.JLabel" binding="lblRingkasan">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Total Rp0, diskon Rp0, bayar Rp0"/>
+          <text value="Jumlah mahasiswa: 0, rata-rata nilai akhir: 0,00"/>
         </properties>
       </component>
     </children>
